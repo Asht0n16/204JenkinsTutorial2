@@ -41,11 +41,11 @@ class Calculator {
      */
     int fibonacciNumberFinder(int n){
         int[] fibs = new int [n+1];
-        fibs[0] = 0;
-        fibs[1] = 1;
-        fibs[2] = 1;
-        for (int i = 3; i <= n; i++) {
-            fibs[i] = fibs[i-1] + fibs[i-2];
+        for (int i = 0; i <= n; i++) {
+            if (i == 0) fibs[i] = 0;
+            else if (i == 1 || i == 2) fibs[i] = 1;
+            else
+                fibs[i] = fibs[i-1] + fibs[i-2];
         }
         return fibs[n];
     }
