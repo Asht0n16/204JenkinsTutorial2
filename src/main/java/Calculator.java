@@ -1,3 +1,4 @@
+import java.util.Random;
 
 class Calculator {
 
@@ -58,7 +59,7 @@ class Calculator {
     if int a = 16 then this method returns: 10000
      */
     String intToBinaryNumber(int n){
-        return null;
+        return Integer.toBinaryString(n);
     }
 
     /*
@@ -70,8 +71,18 @@ class Calculator {
     if you run this function twice with the same String input, it must return 2 unique String IDs
      */
     String createUniqueID(String n){
+        int leftLimit = 48; // numeral '0'
+        int rightLimit = 122; // letter 'z'
+        int targetStringLength = 10;
+        Random random = new Random();
 
-        return null;
+        String generatedString = random.ints(leftLimit, rightLimit + 1)
+                                     .filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+                                     .limit(targetStringLength)
+                                     .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                                     .toString();
+
+        return n + generatedString;
     }
 
 
