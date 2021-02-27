@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.Assert.*;
-
+// Here's a change to make it recompile
 public class CalculatorTestThorough {
 
     @Test
